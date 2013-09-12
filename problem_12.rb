@@ -11,7 +11,9 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 # What is the value of the first triangle number to have over five hundred divisors?
 
-lim = 125000
+time = Time.now
+
+lim = 20
 
 $primes = Array.new(lim) { |e| true }
 $primes[0] = false
@@ -75,11 +77,13 @@ inc = 1
 
 while true do
   triangle += inc
-  
+
   inc += 1
-  
+
   if (num_factors(triangle) > 500)
     puts triangle
     break
   end
 end
+
+puts "#{Time.now - time} seconds"
