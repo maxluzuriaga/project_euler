@@ -25,6 +25,7 @@ end
 
 def set(x,y, val)
   $routes[x][y] = val
+  $routes[y][x] = val
 end
 
 def num_paths(size)
