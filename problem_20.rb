@@ -6,9 +6,9 @@
 time = Time.now
 
 def factorial(n)
-	return n if n == 1
+  return n if n == 1
 
-	return n * factorial(n-1)
+  return n * factorial(n-1)
 end
 
 puts factorial(100).to_s.split("").map { |n| n.to_i  }.inject(:+)
