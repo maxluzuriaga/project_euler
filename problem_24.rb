@@ -14,22 +14,17 @@ def nth_permutation(list, n)
   result = []
 
   list.length.times do |i|
-    puts i
-
-
-    # if list.length == 1
-    #   result.push(list[0])
-    #   break
-    # end
+    if n == 1
+      result.push(list[0])
+      list.delete_at(0)
+      break
+    end
 
     list.each_index do |v|
-      puts list.length
-      puts n
       poss = fact(list.length - 1)
 
       if ((poss * (v+1)) >= n)
         n -= ((poss * v))
-
         result.push(list[v])
         list.delete_at(v)
 
@@ -38,7 +33,11 @@ def nth_permutation(list, n)
     end
   end
 
-  puts result.join("")
+  print result.join("")
 end
 
+time = Time.now
+
 puts nth_permutation([0,1,2,3,4,5,6,7,8,9], 1000000)
+
+puts "#{Time.now - time} seconds"
