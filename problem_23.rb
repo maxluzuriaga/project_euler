@@ -43,7 +43,6 @@ end
 sum = 0
 
 possibles.each_with_index do |v, i|
-  # sum += i unless v
   unless v
     sum += i
   end
